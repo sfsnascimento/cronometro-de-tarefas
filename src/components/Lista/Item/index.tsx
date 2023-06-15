@@ -1,5 +1,5 @@
 import { ITarefa } from '../../../interfaces/ITarefa';
-import style from '../Lista.module.scss';
+import style from './Item.module.scss';
 
 interface IProps extends ITarefa {
   selecionaTarefa: (tarefaSelecionada: ITarefa) => void
