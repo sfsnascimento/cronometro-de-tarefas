@@ -6,10 +6,11 @@ import { tempoParaSegundos } from "../../common/utils/time";
 import { ITarefa } from "../../interfaces/ITarefa";
 
 interface IProps {
-  selecionado: ITarefa | undefined
+  selecionado: ITarefa | undefined,
+  finalizarTarefa: () => void
 }
 
-export default function Cronometro({ selecionado }: IProps) {
+export default function Cronometro({ selecionado, finalizarTarefa }: IProps) {
   const [tempo, setTempo] = useState<number>();
 
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Cronometro({ selecionado }: IProps) {
         setTempo(contador - 1);
         return regressiva(contador - 1);
       }
+      finalizarTarefa();
     }, 1000);
   }
 
